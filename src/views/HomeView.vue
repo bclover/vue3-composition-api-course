@@ -1,35 +1,35 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="home">
     <div>
       <button class="btn" @click="decreaseCounter">-</button>
-      <span class="counter">{{  counter }}</span>
+      <span class="counter">{{ counter }}</span>
       <button class="btn" @click="increaseCounter">+</button>
     </div>
   </div>
 </template>
 
 <script>
+  import { ref } from 'vue';
+  export default {
 
-export default {
-  data() {
-    return {
-      counter: 0
-    }
-  },
+    setup() {
 
-  methods: {
-    decreaseCounter() {
-      (this.counter > 0) ? this.counter-- : this.counter = 0;
-    },
-    increaseCounter() {
-      this.counter++;
+      const counter = ref(0);
+
+      const decreaseCounter = () => {
+        (counter.value > 0) ? counter.value-- : counter.value = 0;
+      }
+
+      const increaseCounter = () => {
+        counter.value++;
+      }
+    
+      return {
+        counter, decreaseCounter, increaseCounter
+      }
+
     }
   }
-}
 </script>
 <style>
 .home {
