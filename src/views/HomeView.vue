@@ -1,3 +1,17 @@
+<script setup>
+  import { ref } from 'vue';
+
+  const counter = ref(0);
+
+  const decreaseCounter = () => {
+    (counter.value > 0) ? counter.value-- : counter.value = 0;
+  }
+
+  const increaseCounter = () => {
+    counter.value++;
+  }
+</script>
+
 <template>
   <div class="home">
     <div>
@@ -8,29 +22,6 @@
   </div>
 </template>
 
-<script>
-  import { ref } from 'vue';
-  export default {
-
-    setup() {
-
-      const counter = ref(0);
-
-      const decreaseCounter = () => {
-        (counter.value > 0) ? counter.value-- : counter.value = 0;
-      }
-
-      const increaseCounter = () => {
-        counter.value++;
-      }
-    
-      return {
-        counter, decreaseCounter, increaseCounter
-      }
-
-    }
-  }
-</script>
 <style>
 .home {
   text-align: center;
@@ -39,6 +30,7 @@
 
 .btn {
   cursor: pointer;
+    width: 1em;
 }
 
 .btn, .counter {
