@@ -1,7 +1,9 @@
 <script setup>
   import { ref } from 'vue';
 
+  const appTitle = 'Vue 3 Counter App';
   const counter = ref(0);
+  const title = ref('My Counter:'); 
 
   const decreaseCounter = () => {
     (counter.value > 0) ? counter.value-- : counter.value = 0;
@@ -14,10 +16,17 @@
 
 <template>
   <div class="home">
+    <h2> {{  appTitle }}</h2>
+    <h3> {{ title }}</h3>
     <div>
       <button class="btn" @click="decreaseCounter">-</button>
       <span class="counter">{{ counter }}</span>
       <button class="btn" @click="increaseCounter">+</button>
+    </div>
+
+    <div class="edit">
+      <h3>Edit Title Here:</h3>
+      <input v-model="title" type="text">
     </div>
   </div>
 </template>
