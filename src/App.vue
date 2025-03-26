@@ -11,10 +11,10 @@
 @import '@/assets/base.css';
 
 #app {
-  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  padding: 2rem;
-
+  padding: 2em;
   font-weight: normal;
 }
 
@@ -25,7 +25,7 @@ header {
 
 .logo {
   display: block;
-  margin: 0 auto 2rem;
+  margin: 0 auto 2em;
 }
 
 a,
@@ -42,10 +42,10 @@ a,
 }
 
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  font-size: 0.75em;
+  margin-top: 2em;
 }
 
 nav a.router-link-exact-active {
@@ -57,9 +57,9 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  display: flex;
+  padding: 0 1em;
+  border-left: 0.0625em solid var(--color-border);
 }
 
 nav a:first-of-type {
