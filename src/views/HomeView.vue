@@ -1,5 +1,6 @@
 <script setup>
   import { ref } from 'vue';
+  import { vAutofocus } from '@/directives/vAutofocus';
 
   const appTitle = 'Vue 3 Counter App';
   const counter = ref(0);
@@ -26,7 +27,7 @@
 
     <div class="edit">
       <h3>Edit Title Here:</h3>
-      <input v-model="title" type="text">
+      <input v-model="title" type="text" v-autofocus>
     </div>
   </div>
 </template>
